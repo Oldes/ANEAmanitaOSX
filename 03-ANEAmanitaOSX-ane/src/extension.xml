@@ -1,0 +1,23 @@
+<extension xmlns="http://ns.adobe.com/air/extension/3.1">
+
+<!-- ADOBE SYSTEMS INCORPORATED                                                                       -->
+<!--  Copyright 2011 Adobe Systems Incorporated                                                       -->
+<!--  All Rights Reserved.                                                                            -->
+<!--                                                                                                  -->
+<!-- NOTICE: Adobe permits you to use, modify, and distribute this file in accordance with the        -->
+<!-- terms of the Adobe license agreement accompanying it.  If you have received this file from a     -->
+<!-- source other than Adobe, then your use, modification, or distribution of it requires the prior   -->
+<!-- written permission of Adobe.                                                                     -->
+
+    <id>net.amanitadesign.ANEAmanitaOSX</id>
+    <versionNumber>1</versionNumber>
+    <platforms>
+      <platform name="MacOS-x86-64">
+        <applicationDeployment>
+          <nativeLibrary>ANEAmanitaOSX.framework</nativeLibrary>
+          <initializer>NativeExtensionsInitializer</initializer>
+          <finalizer>NativeExtensionsFinalizer</finalizer>
+        </applicationDeployment>
+      </platform>
+    </platforms>
+</extension>

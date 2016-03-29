@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ADOBE SYSTEMS INCORPORATED                                                                       -->
+<!--  Copyright 2011 Adobe Systems Incorporated                                                       -->
+<!--  All Rights Reserved.                                                                            -->
+<!--                                                                                                  -->
+<!-- NOTICE: Adobe permits you to use, modify, and distribute this file in accordance with the        -->
+<!-- terms of the Adobe license agreement accompanying it.  If you have received this file from a     -->
+<!-- source other than Adobe, then your use, modification, or distribution of it requires the prior   -->
+<!-- written permission of Adobe.                                                                     -->
+
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" height="525" width="400">
+	<mx:Script>
+		<![CDATA[
+			import net.amanitadesign.ANEAmanitaOSX.Basic;
+			
+			
+			private function onHelloWorld() : void
+			{
+				var b:Basic = new Basic();				
+          		helloWorldResult.text = b.helloWorld(useASExtCode.selected ? 0 : 1);
+			}
+			
+		]]>
+	</mx:Script>
+
+	<mx:HBox width="100%">
+		<mx:RadioButton groupName="mode" id="useASExtCode" label="Use ActionScript Code" /> 
+		<mx:RadioButton groupName="mode" id="useNativeExtCode" label="Use Native Extension Code" />
+	</mx:HBox>
+
+	<!-- Print "Hello World!" -->
+	<mx:Box width="100%">
+		<mx:Button label="Test: Hello World" click="onHelloWorld()"/>
+		<mx:VBox width="100%">
+			<mx:Label text="Result:"/>
+			<mx:TextArea id="helloWorldResult" width="100%" height="22"/>
+		</mx:VBox>
+	</mx:Box>
+
+</mx:WindowedApplication>
