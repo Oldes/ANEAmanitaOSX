@@ -11,6 +11,7 @@
 #include <string.h>
 #include <AssertMacros.h>
 #include <Adobe AIR/Adobe AIR.h>
+#include <steam_api.h>
 
 
 // Symbols tagged with EXPORT are externally visible.
@@ -25,7 +26,14 @@ extern "C"
     FREObject _Basic_helloWorld(FREContext ctx, void* functionData, uint32_t argc, FREObject argv[])
     {
         FREObject strResult;
-        const char* msg = "[Native Code]: Hello MAC from Amanita!";
+        bool bRet = SteamAPI_Init();
+        const char* msg;
+        if(bRet == true){
+            msg = "[Native Code]: Hello MAC from Amanita!";
+        } else {
+            msg = "[Native Code]: No steam";
+        }
+        
         FRENewObjectFromUTF8( strlen(msg)+1, (const uint8_t *) msg, &strResult );
         return strResult;
     }

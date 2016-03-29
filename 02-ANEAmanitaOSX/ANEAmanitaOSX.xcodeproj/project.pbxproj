@@ -10,6 +10,7 @@
 		404182CD1CAA798300064376 /* ANEAmanitaOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 404182CC1CAA798300064376 /* ANEAmanitaOSX.cpp */; };
 		404182CF1CAA7C3600064376 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404182CE1CAA7C3600064376 /* Adobe AIR.framework */; };
 		404182D11CAA7C5300064376 /* Adobe AIR_64 in Frameworks */ = {isa = PBXBuildFile; fileRef = 404182D01CAA7C5300064376 /* Adobe AIR_64 */; };
+		404182D91CAABBF900064376 /* libsteam_api.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 404182D81CAABBF900064376 /* libsteam_api.dylib */; };
 		4088B22D1CA293C3008901FE /* ANEAmanitaOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 4088B22C1CA293C3008901FE /* ANEAmanitaOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -17,6 +18,7 @@
 		404182CC1CAA798300064376 /* ANEAmanitaOSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ANEAmanitaOSX.cpp; sourceTree = "<group>"; };
 		404182CE1CAA7C3600064376 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "SDKs/AIRSDK_Compiler/runtimes/air/mac/Adobe AIR.framework"; sourceTree = DEVELOPER_DIR; };
 		404182D01CAA7C5300064376 /* Adobe AIR_64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR_64"; path = "SDKs/AIRSDK_Compiler/runtimes/air/mac/Adobe AIR.framework/Versions/1.0/Adobe AIR_64"; sourceTree = DEVELOPER_DIR; };
+		404182D81CAABBF900064376 /* libsteam_api.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsteam_api.dylib; path = ../SteamWorks/libsteam_api.dylib; sourceTree = "<group>"; };
 		4088B2271CA293C3008901FE /* ANEAmanitaOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ANEAmanitaOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4088B22B1CA293C3008901FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4088B22C1CA293C3008901FE /* ANEAmanitaOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANEAmanitaOSX.h; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 			files = (
 				404182D11CAA7C5300064376 /* Adobe AIR_64 in Frameworks */,
 				404182CF1CAA7C3600064376 /* Adobe AIR.framework in Frameworks */,
+				404182D91CAABBF900064376 /* libsteam_api.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		4088B21D1CA293C2008901FE = {
 			isa = PBXGroup;
 			children = (
+				404182D81CAABBF900064376 /* libsteam_api.dylib */,
 				404182D01CAA7C5300064376 /* Adobe AIR_64 */,
 				404182CE1CAA7C3600064376 /* Adobe AIR.framework */,
 				4088B2291CA293C3008901FE /* ANEAmanitaOSX */,
@@ -190,6 +194,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Applications/Xcode.app/Contents/Developer/SDKs/SteamWorks_136/public/steam,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -233,6 +242,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Applications/Xcode.app/Contents/Developer/SDKs/SteamWorks_136/public/steam,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
@@ -270,6 +284,12 @@
 					"$(inherited)",
 					"$(DEVELOPER_DIR)\"/SDKs/AIRSDK_Compiler/runtimes/air/mac/Adobe AIR.framework/Versions/1.0\"",
 					"$(DEVELOPER_DIR)/SDKs/SteamWorks_136/redistributable_bin/osx32",
+					/Users/oldes/GIT/ANEAmanitaOSX/SteamWorks,
+				);
+				OTHER_LDFLAGS = (
+					"-flat_namespace",
+					"-weak_framework",
+					"\"Adobe AIR\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -301,6 +321,12 @@
 					"$(inherited)",
 					"$(DEVELOPER_DIR)\"/SDKs/AIRSDK_Compiler/runtimes/air/mac/Adobe AIR.framework/Versions/1.0\"",
 					"$(DEVELOPER_DIR)/SDKs/SteamWorks_136/redistributable_bin/osx32",
+					/Users/oldes/GIT/ANEAmanitaOSX/SteamWorks,
+				);
+				OTHER_LDFLAGS = (
+					"-flat_namespace",
+					"-weak_framework",
+					"\"Adobe AIR\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
