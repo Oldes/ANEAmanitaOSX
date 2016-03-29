@@ -38,6 +38,7 @@ hdiutil detach $idisk -force
 # Copy expanded Native Extension app
 
 cp ../04-ANEAmanitaOSX-test/NativeExtensionTest.dmg .
+cp ../SteamWorks/steam_appid.txt .
 hdid NativeExtensionTest.dmg
 
 cp -Rp /Volumes/Install\ NativeExtensionTest/Install\ NativeExtensionTest.app/Contents/Resources/NativeExtensionTest/Contents/Resources/ .

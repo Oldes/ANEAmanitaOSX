@@ -28,6 +28,7 @@ mkdir -p src/assets
 
 cp "../cert/test.pfx" src/assets
 cp "../01-ANEAmanitaOSX-swc/net.amanitadesign.ANEAmanitaOSX.swc" src/assets
+cp ../SteamWorks/steam_appid.txt src/assets
 
 mkdir -p src/assets/ane
 

@@ -20,3 +20,4 @@ $XCODEBLD -project ./ANEAmanitaOSX.xcodeproj	\
     -arch x86_64	\
     clean build
 
+cp ../SteamWorks/libsteam_api.dylib ./build/Release/ANEAmanitaOSX.framework/Versions/A/

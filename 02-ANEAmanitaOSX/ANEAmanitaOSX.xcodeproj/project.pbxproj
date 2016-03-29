@@ -10,7 +10,6 @@
 		404182CD1CAA798300064376 /* ANEAmanitaOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 404182CC1CAA798300064376 /* ANEAmanitaOSX.cpp */; };
 		404182CF1CAA7C3600064376 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404182CE1CAA7C3600064376 /* Adobe AIR.framework */; };
 		404182D11CAA7C5300064376 /* Adobe AIR_64 in Frameworks */ = {isa = PBXBuildFile; fileRef = 404182D01CAA7C5300064376 /* Adobe AIR_64 */; };
-		404182D91CAABBF900064376 /* libsteam_api.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 404182D81CAABBF900064376 /* libsteam_api.dylib */; };
 		4088B22D1CA293C3008901FE /* ANEAmanitaOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 4088B22C1CA293C3008901FE /* ANEAmanitaOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 			files = (
 				404182D11CAA7C5300064376 /* Adobe AIR_64 in Frameworks */,
 				404182CF1CAA7C3600064376 /* Adobe AIR.framework in Frameworks */,
-				404182D91CAABBF900064376 /* libsteam_api.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,9 +285,12 @@
 					/Users/oldes/GIT/ANEAmanitaOSX/SteamWorks,
 				);
 				OTHER_LDFLAGS = (
+					"-w",
 					"-flat_namespace",
 					"-weak_framework",
 					"\"Adobe AIR\"",
+					"-weak_library",
+					../SteamWorks/libsteam_api.dylib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -324,9 +325,12 @@
 					/Users/oldes/GIT/ANEAmanitaOSX/SteamWorks,
 				);
 				OTHER_LDFLAGS = (
+					"-w",
 					"-flat_namespace",
 					"-weak_framework",
 					"\"Adobe AIR\"",
+					"-weak_library",
+					../SteamWorks/libsteam_api.dylib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
